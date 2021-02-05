@@ -1,8 +1,19 @@
-import React from 'react';
-import "./login.css";
-import { Container, Row, Col } from 'react-bootstrap';
+import React, { useState } from "react";
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import "./Login.css";
 
 const LoginPage = () => {
+
+	const [username, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+
+	function validateForm() {
+    return username.length > 0 && password.length > 0;
+  }
+	
+	function handleSubmit(event) {
+    event.preventDefault();
+  }
   return (
 		<Container className="section">
 	   	<Row>
@@ -14,21 +25,30 @@ const LoginPage = () => {
       	<Col>
         	<div className="login-form">
         		<h2>Login Form</h2>
-        		<form action="/action_page.php" method="post">
-          		<div className="container">
-        	 			<div className="input-field">
-          	 			<label for="username">Username</label>
-          	 			<span><i className="fas fa-user"></i></span>
-          	 			<input type="text" placeholder="Enter Username" name="uname" required />
-            		</div>
-            		<div className="input-field">
-          	 			<label for="password">Password</label>
-          	 			<span><i className="fas fa-unlock"></i></span>
-          	 			<input type="password" placeholder="Enter Password" name="psw" required />
-            		</div>
-            		<button type="submit">Login</button>
-          		</div>
-        		</form>
+        		<Form onSubmit={handleSubmit} className="container">
+        	 		<Form.Group size="lg" controlId="username" className="input-field">
+          	 		<Form.Label for="username">Username</Form.Label>
+          	 		<span><i className="fas fa-user"></i></span>
+								 <Form.Control type="text" 
+									 	autoFocus 
+									 	placeholder="Enter Username"
+										value={username}
+            				onChange={(e) => setUserName(e.target.value)} 
+									/>
+            	</Form.Group>
+            	<Form.Group size="lg" controlId="password" className="input-field">
+          	 		<Form.Label for="password">Password</Form.Label>
+          	 		<span><i className="fas fa-unlock"></i></span>
+								 <Form.Control type="password"
+									 	placeholder="Enter Password" 
+									 	value={password}
+            				onChange={(e) => setPassword(e.target.value)}
+									/>
+            	</Form.Group>
+            	<Button type="submit" block size="lg" disabled={!validateForm()}>
+								Login
+							</Button>
+        		</Form>
         	</div>
       	</Col>
     	</Row>
