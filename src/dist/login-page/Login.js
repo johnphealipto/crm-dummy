@@ -2,20 +2,23 @@ import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import "./Login.css";
 
+
 const LoginPage = () => {
 
 	const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
-	function validateForm() {
+  function validateForm() {
     return username.length > 0 && password.length > 0;
   }
-	
-	function handleSubmit(event) {
+
+  function submitHandler(event) {
     event.preventDefault();
   }
+	
   return (
-		<Container className="section">
+		<div className="login-wrapper">
+		<Container className="login-container">
 	   	<Row>
 		  	<Col>
 			   	<div className="welcome-note">
@@ -25,7 +28,7 @@ const LoginPage = () => {
       	<Col>
         	<div className="login-form">
         		<h2>Login Form</h2>
-        		<Form onSubmit={handleSubmit} className="container">
+        		<Form onSubmit={submitHandler} className="container">
         	 		<Form.Group size="lg" controlId="username" className="input-field">
           	 		<Form.Label for="username">Username</Form.Label>
           	 		<span><i className="fas fa-user"></i></span>
@@ -45,7 +48,7 @@ const LoginPage = () => {
             				onChange={(e) => setPassword(e.target.value)}
 									/>
             	</Form.Group>
-            	<Button type="submit" block size="lg" disabled={!validateForm()}>
+							<Button type="submit" block size="lg" disabled={!validateForm()}>
 								Login
 							</Button>
         		</Form>
@@ -53,6 +56,7 @@ const LoginPage = () => {
       	</Col>
     	</Row>
   	</Container>
+		</div>
   );
 }
 

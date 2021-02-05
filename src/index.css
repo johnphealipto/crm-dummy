@@ -6,7 +6,7 @@
 }
 
 body {
-  background: linear-gradient(90deg, var(--ghost-white-color) 70%, var(--unique-blue-color) 0%);
+  /* background: linear-gradient(90deg, var(--ghost-white-color) 70%, var(--unique-blue-color) 0%); */
 	font-family: 'Dosis', sans-serif;
   margin: 0;
   -webkit-font-smoothing: antialiased;
