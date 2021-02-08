@@ -1,14 +1,22 @@
 .dashboard-wrapper {
-    text-align: center;
     margin: 0 auto;
     background-color: var(--ghost-white-color);
     height: 100vh;
     overflow: hidden;
 }
-.dashboard-container {
+.dashboard-header {
+    background-color: var(--unique-blue-color);
+    color: var(--ghost-white-color);
+    padding: 5px;
+}
+.dashboard-header h1 {
+    /* float: left; */
+}
+.dashboard-body-container {
     margin-top: 15vh;
     background-color: var(--unique-blue-color);
-    color: var(--ghost-white-color);;
+    color: var(--ghost-white-color);
+    text-align: center;
     padding: 8vh 8vh;
     margin-bottom: 15vh;
     border-radius: 15px;
