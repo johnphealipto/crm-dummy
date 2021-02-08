@@ -2,15 +2,24 @@
     margin: 0 auto;
     background-color: var(--ghost-white-color);
     height: 100vh;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .dashboard-header {
     background-color: var(--unique-blue-color);
     color: var(--ghost-white-color);
     padding: 5px;
 }
-.dashboard-header h1 {
-    /* float: left; */
+.dashboard-header .header-container {
+    display: flex;
+}
+.dashboard-header .user-status {
+	position: absolute;
+	display: flex;
+	right: 20vh;
+	margin-top: 2vh;
+}
+.dashboard-header .user-status p {
+	letter-spacing: 1px;
 }
 .dashboard-body-container {
     margin-top: 15vh;
