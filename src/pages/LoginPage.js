@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import "./Login.css";
-
 
 const LoginPage = () => {
 
@@ -17,7 +15,7 @@ const LoginPage = () => {
   }
 	
   return (
-		<div className="login-wrapper">
+		<div className="loginpage-wrapper">
 		<Container className="login-container">
 	   	<Row>
 		  	<Col>
